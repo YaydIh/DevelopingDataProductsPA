@@ -1,5 +1,7 @@
 library(shiny)
 
+myData <- read.csv(file="data/9898.csv", header=TRUE, sep=",")
+
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
 
@@ -10,6 +12,8 @@ shinyServer(function(input, output) {
   #     when inputs change
   #  2) Its output type is a plot
 
+
+  output$myText <- renderText({ paste(nrow(myData)) })
   output$distPlot <- renderPlot({
     x    <- faithful[, 2]  # Old Faithful Geyser data
     bins <- seq(min(x), max(x), length.out = input$bins + 1)
