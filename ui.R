@@ -11,7 +11,7 @@ shinyUI(fluidPage(
     sidebarPanel(
      checkboxGroupInput(
        "checkGroup1",
-       label = h4("Graph 1"),
+       label = h4("Red Graph"),
        choices = list( 
          'Sunday'    = 1,
          'Monday'    = 2,
@@ -25,7 +25,7 @@ shinyUI(fluidPage(
      hr(),
      checkboxGroupInput(
        "checkGroup2",
-       label = h4("Graph 2"),
+       label = h4("Green Graph"),
        choices = list( 
          'Sunday'    = 1,
          'Monday'    = 2,
@@ -40,8 +40,6 @@ shinyUI(fluidPage(
 
     # Show a plot of the generated distribution
     mainPanel(
-      textOutput("myText1"),
-      textOutput("myText2"),
       plotOutput("distPlot1"),
       plotOutput("distPlot2"),
       plotOutput("distPlot3")
