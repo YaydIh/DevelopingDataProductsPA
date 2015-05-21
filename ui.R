@@ -4,7 +4,13 @@ library(shiny)
 shinyUI(fluidPage(
 
   # Application title
-  titlePanel("Hello Shiny!"),
+  titlePanel(
+    p(
+     h2("New Orleans Police Department "),
+     h3("911 Calls for Service -- 2014"),
+     h4("WRECKLESS DRIVING, DRIVING WHILE UNDER INFLUENCE")
+    )
+  ),
 
   # Sidebar with a slider input for the number of bins
   sidebarLayout(
@@ -40,9 +46,15 @@ shinyUI(fluidPage(
 
     # Show a plot of the generated distribution
     mainPanel(
-      plotOutput("distPlot1"),
-      plotOutput("distPlot2"),
-      plotOutput("distPlot3")
+      tabsetPanel(
+        tabPanel("Overview", verbatimTextOutput("summary")),
+        tabPanel("Directions", verbatimTextOutput("directions")),
+        tabPanel("Plots",
+          plotOutput("distPlot1"),
+          plotOutput("distPlot2"),
+          plotOutput("distPlot3")
+        )
+      )
     )
   )
 ))

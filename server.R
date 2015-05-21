@@ -92,5 +92,11 @@ shinyServer(function(input, output) {
     lines(density(myData$hour, adjust = 2), col = "blue")
   })
   
+  source("overview.R")
+  output$summary <- renderText(overviewText)
+
+  source("directions.R")
+  output$directions <- renderText(directionsText)
+
 })
 
