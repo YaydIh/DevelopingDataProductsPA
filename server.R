@@ -3,7 +3,8 @@ library(lubridate)
 
 myData <- read.csv(file="data/9898.csv", header=TRUE, sep=",")
 myData$ldate <- mdy_hms(myData$TimeCreate)
-myData$hour  <- hour(myData$ldate)
+# shift to make bins on histograms more intuitive
+myData$hour  <- hour(myData$ldate)+1
 myData$wday  <- wday(myData$ldate)
 
 
@@ -20,7 +21,7 @@ shinyServer(function(input, output) {
 
   output$distPlot1 <- renderPlot({
     x    <- dataInput1()
-    bins <- -1:23
+    bins <- 0:24
     # draw the histogram with the specified number of bins
     hist(
      x, 
@@ -38,7 +39,7 @@ shinyServer(function(input, output) {
     }
     di2 <- dataInput2()
     if (length(di2>0)) {
-      lines(density(di2, adjust = 2), col = "green")
+      lines(density(di2, adjust = 2), col = "darkgreen")
     }
     lines(density(myData$hour, adjust = 2), col = "blue")
 
@@ -46,7 +47,7 @@ shinyServer(function(input, output) {
 
   output$distPlot2 <- renderPlot({
     x    <- dataInput2()
-    bins <- -1:23
+    bins <- 0:24
     # draw the histogram with the specified number of bins
     hist(
      x, 
@@ -63,14 +64,14 @@ shinyServer(function(input, output) {
     }
     di2 <- dataInput2()
     if (length(di2>0)) {
-      lines(density(di2, adjust = 2), col = "green")
+      lines(density(di2, adjust = 2), col = "darkgreen")
     }
     lines(density(myData$hour, adjust = 2), col = "blue")
   })
 
   output$distPlot3 <- renderPlot({
-    x    <- myData$hour  
-    bins <- -1:23
+    x    <- myData$hour   
+    bins <- 0:24
     # draw the histogram with the specified number of bins
     hist(
      x, 
@@ -87,7 +88,7 @@ shinyServer(function(input, output) {
     }
     di2 <- dataInput2()
     if (length(di2>0)) {
-      lines(density(di2, adjust = 2), col = "green")
+      lines(density(di2, adjust = 2), col = "darkgreen")
     }
     lines(density(myData$hour, adjust = 2), col = "blue")
   })
