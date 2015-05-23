@@ -38,3 +38,6 @@
   user to choose which days of the week to include
   in the graph.
 
+## slidify presentation
+
+http://yaydih.github.io/firstSlidify/#1
