@@ -2,14 +2,14 @@ directionsText <- paste("
   The input panel on the left consist of two
   sections.
 
-  The one with the title "Red Graph" controls the
+  The one with the title 'Red Graph' controls the
   display on the top histogram in the 'Plots'
   panel.  The bars of that histogram are colored
   red.
 
-  The section with the title "Green Graph"
+  The section with the title 'Green Graph'
   controls the display on the middle of the three
-  graphs in the "Plots' tab.  The bars of that
+  graphs in the 'Plots' tab.  The bars of that
   histogram are colored green.
 
   The bottom graph, colored with blue bars, does
