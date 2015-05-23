@@ -26,7 +26,7 @@ shinyServer(function(input, output) {
     hist(
      x, 
      breaks = bins, 
-     main="TODO", 
+     main="Calls for Service\nWRECKLESS DRIVING\nDRIVING WHILE UNDER INFLUENCE", 
      col = 'lightpink',
      border = 'white',
      freq=FALSE,
@@ -35,13 +35,13 @@ shinyServer(function(input, output) {
     
     di1 <- dataInput1()
     if (length(di1>0)) {
-      lines(density(di1, adjust = 2), col = "red")
+      lines(density(di1, adjust = 1), col = "red")
     }
     di2 <- dataInput2()
     if (length(di2>0)) {
-      lines(density(di2, adjust = 2), col = "darkgreen")
+      lines(density(di2, adjust = 1), col = "darkgreen")
     }
-    lines(density(myData$hour, adjust = 2), col = "blue")
+    lines(density(myData$hour, adjust = 1), col = "blue")
 
   })
 
@@ -52,7 +52,7 @@ shinyServer(function(input, output) {
     hist(
      x, 
      breaks = bins, 
-     main="TODO", 
+     main="Calls for Service\nWRECKLESS DRIVING\nDRIVING WHILE UNDER INFLUENCE", 
      col = 'lightgreen', 
      border = 'white',
      freq=FALSE,
@@ -60,13 +60,13 @@ shinyServer(function(input, output) {
      ylim=c(0,0.1))
     di1 <- dataInput1()
     if (length(di1>0)) {
-      lines(density(di1, adjust = 2), col = "red")
+      lines(density(di1, adjust = 1), col = "red")
     }
     di2 <- dataInput2()
     if (length(di2>0)) {
-      lines(density(di2, adjust = 2), col = "darkgreen")
+      lines(density(di2, adjust = 1), col = "darkgreen")
     }
-    lines(density(myData$hour, adjust = 2), col = "blue")
+    lines(density(myData$hour, adjust = 1), col = "blue")
   })
 
   output$distPlot3 <- renderPlot({
@@ -76,7 +76,7 @@ shinyServer(function(input, output) {
     hist(
      x, 
      breaks = bins, 
-     main="TODO", 
+     main="Calls for Service\nWRECKLESS DRIVING\nDRIVING WHILE UNDER INFLUENCE", 
      col = 'lightblue', 
      border = 'white',
      freq=FALSE,
@@ -84,13 +84,13 @@ shinyServer(function(input, output) {
      ylim=c(0,0.1))
     di1 <- dataInput1()
     if (length(di1>0)) {
-      lines(density(di1, adjust = 2), col = "red")
+      lines(density(di1, adjust = 1), col = "red")
     }
     di2 <- dataInput2()
     if (length(di2>0)) {
-      lines(density(di2, adjust = 2), col = "darkgreen")
+      lines(density(di2, adjust = 1), col = "darkgreen")
     }
-    lines(density(myData$hour, adjust = 2), col = "blue")
+    lines(density(myData$hour, adjust = 1), col = "blue")
   })
   
   source("overview.R")
